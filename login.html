@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <center>
+      <!DOCTYPE html>
+<html>
+<head>
+    <title>Stylish Login</title>
+
+    <style>
+        body {
+            background-image: url("https://images.unsplash.com/photo-1526378722484-cc5c510f3d1a");
+            background-size: cover;
+            font-family: Arial;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .box {
+            background: rgba(255,255,255,0.9);
+            padding: 25px;
+            width: 300px;
+            margin: auto;
+            border-radius: 12px;
+            box-shadow: 0 0 15px black;
+        }
+
+        input {
+            width: 85%;
+            padding: 10px;
+            margin: 8px;
+            border-radius: 5px;
+            border: 1px solid gray;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #0077b6;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .icon {
+            width: 60px;
+            margin-bottom: 10px;
+        }
+
+        #message {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <!-- Big Icon -->
+    <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" class="icon">
+
+    <h2>Login</h2>
+
+    <input type="text" id="username" placeholder="👤 Enter Name"><br>
+
+    <input type="password" id="password" placeholder="🔒 Enter Password"><br>
+
+    <input type="checkbox" onclick="togglePassword()"> Show Password <br><br>
+
+    <button onclick="login()">Login</button>
+
+    <p id="message"></p>
+
+</div>
+
+<script>
+let attempts = 3;
+
+function togglePassword() {
+    let pass = document.getElementById("password");
+    pass.type = (pass.type === "password") ? "text" : "password";
+}
+
+function login() {
+    let user = document.getElementById("username").value;
+    let pass = document.getElementById("password").value;
+
+    if (attempts === 0) {
+        document.getElementById("message").innerHTML = "Account Locked 🔒";
+        return;
+    }
+
+    if (user === "admin" && pass === "1234") {
+        document.getElementById("message").innerHTML = "Login Successful ✅";
+        document.getElementById("message").style.color = "green";
+    } else {
+        attempts--;
+        document.getElementById("message").innerHTML =
+            "Wrong! Attempts left: " + attempts + " ❌";
+        document.getElementById("message").style.color = "red";
+    }
+}
+</script>
+
+</body>
+</html>  
+         
+     
+
+    </center>
+    
+</form>
+
+</body>
+</html>
