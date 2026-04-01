@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    width: 350px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #5563c1;
+}
+
+.message {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Create Account</h2>
+
+    <input type="text" id="name" placeholder="Full Name">
+    <input type="email" id="email" placeholder="Email Address">
+    <input type="password" id="password" placeholder="Password">
+    <input type="password" id="confirm" placeholder="Confirm Password">
+
+    <button onclick="signup()">Sign Up</button>
+
+    <p id="message" class="message"></p>
+</div>
+
+<script>
+function signup() {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let pass = document.getElementById("password").value;
+    let confirm = document.getElementById("confirm").value;
+    let msg = document.getElementById("message");
+
+    if (!name || !email || !pass || !confirm) {
+        msg.innerHTML = "All fields are required ❌";
+        msg.style.color = "red";
+        return;
+    }
+
+    if (pass.length < 6) {
+        msg.innerHTML = "Password must be at least 6 characters 🔐";
+        msg.style.color = "red";
+        return;
+    }
+
+    if (pass !== confirm) {
+        msg.innerHTML = "Passwords do not match ❌";
+        msg.style.color = "red";
+        return;
+    }
+
+    msg.innerHTML = "Account created successfully ✅";
+    msg.style.color = "green";
+}
+</script>
+
+</body>
+</html>

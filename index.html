@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <center>
+       <!DOCTYPE html>
+<html>
+<head>
+    <title>Car Booking App</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 60px;
+            background-image: url("https://images.unsplash.com/photo-1503376780353-7e6692767b70");
+            background-size: cover;
+        }
+
+        .box {
+            background: rgba(255,255,255,0.9);
+            padding: 25px;
+            width: 320px;
+            margin: auto;
+            border-radius: 12px;
+            box-shadow: 0 0 15px black;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 8px;
+            border-radius: 5px;
+            border: 1px solid gray;
+        }
+
+        button {
+            padding: 10px 15px;
+            background: #ff6b00;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        img {
+            width: 140px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- LOGIN PAGE -->
+<div id="loginPage" class="box">
+    <h2>🚗 Car Booking Login</h2>
+
+    <img src="https://cdn-icons-png.flaticon.com/512/743/743922.png">
+
+    <input type="text" id="user" placeholder="👤 Enter Username"><br>
+    <input type="password" id="pass" placeholder="🔒 Enter Password"><br>
+
+    <button onclick="login()">Login 🚀</button>
+
+    <p id="msg"></p>
+</div>
+
+<!-- HOME PAGE -->
+<div id="homePage" class="box" style="display:none; background:#d8f3dc;">
+    
+    <h2>🎉 Welcome to Car Booking</h2>
+    <p id="welcomeUser"></p>
+
+    <img src="https://cdn-icons-png.flaticon.com/512/3202/3202926.png">
+
+    <p>🚗 Book your car easily!</p>
+    <p>📍 Choose pickup location</p>
+    <p>💳 Make payment</p>
+
+    <button onclick="logout()">Logout 👋</button>
+</div>
+
+<!-- LOGOUT PAGE -->
+<div id="logoutPage" class="box" style="display:none; background:#ffd6a5;">
+    
+    <h2>👋 Logged Out</h2>
+    <p>Thank you for using our car app 😊</p>
+
+    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828479.png">
+
+    <p>🌟 Drive safe!</p>
+
+    <button onclick="goLogin()">Login Again 🔁</button>
+</div>
+
+<script>
+
+function login() {
+    let u = document.getElementById("user").value;
+    let p = document.getElementById("pass").value;
+
+    if (u === "admin" && p === "1234") {
+        document.getElementById("loginPage").style.display = "none";
+        document.getElementById("homePage").style.display = "block";
+
+        document.getElementById("welcomeUser").innerHTML = "Hello " + u + " 😎";
+
+        document.body.style.background = "#d8f3dc";
+    } else {
+        document.getElementById("msg").innerHTML = "❌ Wrong Login";
+    }
+}
+
+function logout() {
+    document.getElementById("homePage").style.display = "none";
+    document.getElementById("logoutPage").style.display = "block";
+    document.body.style.background = "#ffd6a5";
+}
+
+function goLogin() {
+    document.getElementById("logoutPage").style.display = "none";
+    document.getElementById("loginPage").style.display = "block";
+    document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1503376780353-7e6692767b70')";
+}
+
+</script>
+
+</body>
+</html>
+     
+
+    </center>
+    
+</form>
+
+</body>
+</html>
